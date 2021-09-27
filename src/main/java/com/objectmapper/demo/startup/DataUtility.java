@@ -28,13 +28,13 @@ public class DataUtility {
         //Object to JSON in file
         User user = mapper.readValue(new File("src/main/resources/datum.json"), User.class);
 
-        Stream<Datum> sorted = user.getData().stream()
-                .sorted(Comparator.comparing(Datum::getEmployeeName));
+        user.getData().sort(Comparator.comparing(Datum::getEmployeeName));
 
-        if(ObjectUtils.isEmpty(sorted)){
+        if(ObjectUtils.isEmpty(user)){
+
             return new User();
         }
 
-        return (User) sorted;
+        return user;
     }
 }
