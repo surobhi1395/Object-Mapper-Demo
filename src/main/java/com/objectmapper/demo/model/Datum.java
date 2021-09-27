@@ -20,6 +20,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+
 @Generated("jsonschema2pojo")
 public class Datum {
 
@@ -33,5 +34,7 @@ public class Datum {
     public Integer employeeAge;
     @JsonProperty("profile_image")
     public String profileImage;
+
+
 
 }
