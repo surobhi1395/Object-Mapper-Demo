@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.Data;
+import lombok.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,6 +16,10 @@ import lombok.Data;
     "profile_image"
 })
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Generated("jsonschema2pojo")
 public class Datum {
 
@@ -30,11 +34,4 @@ public class Datum {
     @JsonProperty("profile_image")
     public String profileImage;
 
-    public Datum(Integer id, String employeeName, Integer employeeSalary, Integer employeeAge, String profileImage) {
-        this.id = id;
-        this.employeeName = employeeName;
-        this.employeeSalary = employeeSalary;
-        this.employeeAge = employeeAge;
-        this.profileImage = profileImage;
-    }
 }

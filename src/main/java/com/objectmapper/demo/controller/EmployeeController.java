@@ -1,6 +1,7 @@
 package com.objectmapper.demo.controller;
 
 import com.objectmapper.demo.model.Datum;
+import com.objectmapper.demo.model.User;
 import com.objectmapper.demo.service.EmployeeService;
 import org.apache.catalina.mbeans.DataSourceUserDatabaseMBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/employee")
-    public List<Datum> getAllEmpInfo(){
+    public User getAllEmpInfo(){
         return employeeService.getAllEmployee();
     }
 

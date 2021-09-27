@@ -16,7 +16,7 @@ import lombok.Data;
     "message"
 })
 @Generated("jsonschema2pojo")
-public class Example {
+public class User {
 
     @JsonProperty("status")
     public String status;
