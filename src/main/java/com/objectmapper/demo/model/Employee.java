@@ -16,12 +16,12 @@ import lombok.Data;
     "message"
 })
 @Generated("jsonschema2pojo")
-public class User {
+public class Employee {
 
     @JsonProperty("status")
     public String status;
     @JsonProperty("data")
-    public List<Datum> data = null;
+    public List<EmployeeData> data = null;
     @JsonProperty("message")
     public String message;
 

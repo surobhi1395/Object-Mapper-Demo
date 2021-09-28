@@ -22,7 +22,7 @@ import lombok.*;
 @Setter
 
 @Generated("jsonschema2pojo")
-public class Datum {
+public class EmployeeData {
 
     @JsonProperty("id")
     public Integer id;
