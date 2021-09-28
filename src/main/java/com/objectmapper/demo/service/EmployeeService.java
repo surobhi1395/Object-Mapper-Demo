@@ -1,5 +1,6 @@
 package com.objectmapper.demo.service;
 
+import com.objectmapper.demo.constant.EmployeeConstant;
 import com.objectmapper.demo.model.Employee;
 import com.objectmapper.demo.model.EmployeeData;
 import com.objectmapper.demo.startup.DataUtility;
@@ -23,11 +24,11 @@ public class EmployeeService {
         // sorting by name
         empDetails.getData().sort(comparing(EmployeeData::getEmployeeSalary));
         List<EmployeeData> collect = empDetails.getData().stream()
-                .filter(employeeData -> employeeData.employeeAge > 40)
+                .filter(employeeData -> employeeData.employeeAge > EmployeeConstant.AgeConstant.AGE)
                         .collect(Collectors.toList());
-        Map<Integer, String> listToMap = collect.stream().collect(Collectors
+        return collect.stream().collect(Collectors
                 .toMap(EmployeeData::getId, EmployeeData::getEmployeeName));
-        return listToMap;
+
     }
 
 }
