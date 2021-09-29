@@ -39,12 +39,15 @@ public class EmployeeService {
     }
 
     public EmployeeData addEmployee(EmployeeData employeeData) {
-        employeeValidation.validateEmployeeName(employeeData);
-        employeeData.getId();
-        employeeData.getEmployeeName();
-        employeeData.getEmployeeSalary();
-        employeeData.getEmployeeAge();
-        employeeData.getProfileImage();
+
+            employeeValidation.validateEmployeeName(employeeData);
+
+            employeeData.getId();
+            employeeData.getEmployeeName();
+            employeeData.getEmployeeSalary();
+            employeeData.getEmployeeAge();
+            employeeData.getProfileImage();
+
         return employeeData;
     }
 }
