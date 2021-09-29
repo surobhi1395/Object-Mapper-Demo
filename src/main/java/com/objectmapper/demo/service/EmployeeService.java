@@ -41,7 +41,12 @@ public class EmployeeService {
 
     public EmployeeData addEmployee(EmployeeData employeeData) {
         employeeValidation.validateEmployeeName(employeeData);
-
-        return employeeData;
+        EmployeeData saved = new EmployeeData();
+        saved.getId();
+        saved.getEmployeeName();
+        saved.getEmployeeSalary();
+        saved.getEmployeeAge();
+        saved.getProfileImage();
+        return saved;
     }
 }

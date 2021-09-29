@@ -35,6 +35,4 @@ public class EmployeeData {
     @JsonProperty("profile_image")
     public String profileImage;
 
-
-
 }
