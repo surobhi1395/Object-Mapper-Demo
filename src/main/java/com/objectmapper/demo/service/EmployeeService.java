@@ -26,6 +26,8 @@ public class EmployeeService {
         List<EmployeeData> collect = empDetails.getData().stream()
                 .filter(employeeData -> employeeData.employeeAge > EmployeeConstant.AgeConstant.AGE)
                         .collect(Collectors.toList());
+
+        // just for checking
         return collect.stream().collect(Collectors
                 .toMap(EmployeeData::getId, EmployeeData::getEmployeeName));
 
