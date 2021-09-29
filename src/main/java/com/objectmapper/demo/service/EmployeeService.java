@@ -4,9 +4,11 @@ import com.objectmapper.demo.constant.EmployeeConstant;
 import com.objectmapper.demo.model.Employee;
 import com.objectmapper.demo.model.EmployeeData;
 import com.objectmapper.demo.startup.DataUtility;
+import com.objectmapper.demo.validate.EmployeeValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,12 +21,16 @@ public class EmployeeService {
     @Autowired
     private DataUtility dataUtility;
 
+    @Autowired
+    private EmployeeValidation employeeValidation;
+
     public Map<Integer, String> getAllEmployee(){
+        //employeeValidation.validateEmployee();
         Employee empDetails = dataUtility.getEmpDetails();
         // sorting by name
         empDetails.getData().sort(comparing(EmployeeData::getEmployeeSalary));
         List<EmployeeData> collect = empDetails.getData().stream()
-                .filter(employeeData -> employeeData.employeeAge > EmployeeConstant.AgeConstant.AGE)
+                .filter(employeeData -> employeeData.employeeAge > EmployeeConstant.Constants.AGE)
                         .collect(Collectors.toList());
 
         // just for checking
@@ -33,4 +39,9 @@ public class EmployeeService {
 
     }
 
+    public EmployeeData addEmployee(EmployeeData employeeData) {
+        employeeValidation.validateEmployeeName(employeeData);
+
+        return employeeData;
+    }
 }
