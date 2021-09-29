@@ -24,7 +24,7 @@ public class EmployeeController {
         return employeeService.getAllEmployee();
     }
 
-    @PostMapping("/createEmployee")
+    @PostMapping("/add")
     public EmployeeData addEmployee(@RequestBody EmployeeData employeeData){
         return employeeService.addEmployee(employeeData);
     }
