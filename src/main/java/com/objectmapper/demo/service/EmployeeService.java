@@ -8,7 +8,6 @@ import com.objectmapper.demo.validate.EmployeeValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -25,7 +24,7 @@ public class EmployeeService {
     private EmployeeValidation employeeValidation;
 
     public Map<Integer, String> getAllEmployee(){
-        //employeeValidation.validateEmployee();
+
         Employee empDetails = dataUtility.getEmpDetails();
         // sorting by name
         empDetails.getData().sort(comparing(EmployeeData::getEmployeeSalary));
@@ -41,12 +40,11 @@ public class EmployeeService {
 
     public EmployeeData addEmployee(EmployeeData employeeData) {
         employeeValidation.validateEmployeeName(employeeData);
-        EmployeeData saved = new EmployeeData();
-        saved.getId();
-        saved.getEmployeeName();
-        saved.getEmployeeSalary();
-        saved.getEmployeeAge();
-        saved.getProfileImage();
-        return saved;
+        employeeData.getId();
+        employeeData.getEmployeeName();
+        employeeData.getEmployeeSalary();
+        employeeData.getEmployeeAge();
+        employeeData.getProfileImage();
+        return employeeData;
     }
 }
