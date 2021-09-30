@@ -4,6 +4,7 @@ import com.objectmapper.demo.model.Employee;
 import com.objectmapper.demo.model.EmployeeData;
 import com.objectmapper.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,8 +26,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public EmployeeData addEmployee(@RequestBody EmployeeData employeeData){
-
-            return employeeService.addEmployee(employeeData);
-        }
+    public ResponseEntity<EmployeeData> addEmployee(@RequestBody EmployeeData employeeData){
+        EmployeeData employeeData1 = employeeService.addEmployee(employeeData);
+        return ResponseEntity.ok().body(employeeData1);
+    }
     }

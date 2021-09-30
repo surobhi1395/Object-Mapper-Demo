@@ -25,7 +25,7 @@ public class EmployeeValidation {
             && employeeData.getEmployeeName().matches("^[a-zA-Z]*$")){
             throw new EmployeeNotFoundException("Not a Valid Info");
         }
-        if(employeeData.getEmployeeAge()<40){
+        if(employeeData.getEmployeeAge() < 40){
             throw new EmployeeNotFoundException("Not a Valid Info");
         }
     }
