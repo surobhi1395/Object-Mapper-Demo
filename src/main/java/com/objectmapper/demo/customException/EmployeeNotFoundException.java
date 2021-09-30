@@ -1,4 +1,4 @@
-package com.objectmapper.demo.exception;
+package com.objectmapper.demo.customException;
 
 public class EmployeeNotFoundException extends RuntimeException{
 

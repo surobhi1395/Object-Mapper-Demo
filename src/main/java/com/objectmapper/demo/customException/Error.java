@@ -1,4 +1,4 @@
-package com.objectmapper.demo.exception;
+package com.objectmapper.demo.customException;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
