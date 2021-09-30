@@ -5,6 +5,7 @@ import com.objectmapper.demo.model.Employee;
 import com.objectmapper.demo.model.EmployeeData;
 import com.objectmapper.demo.startup.DataUtility;
 import com.objectmapper.demo.validate.EmployeeValidation;
+import com.objectmapper.demo.validate.SalaryValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,9 @@ public class EmployeeService {
 
     @Autowired
     private EmployeeValidation employeeValidation;
+
+    @Autowired
+    private SalaryValidation salaryValidation;
 
     public Map<Integer, String> getAllEmployee(){
 
@@ -41,7 +45,7 @@ public class EmployeeService {
     public EmployeeData addEmployee(EmployeeData employeeData) {
 
             employeeValidation.validateEmployeeName(employeeData);
-
+            salaryValidation.checkSalIncrement(employeeData);
             employeeData.getId();
             employeeData.getEmployeeName();
             employeeData.getEmployeeSalary();
