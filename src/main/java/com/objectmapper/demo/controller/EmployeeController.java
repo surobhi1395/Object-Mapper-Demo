@@ -21,7 +21,6 @@ public class EmployeeController {
 
     @GetMapping("/employee")
     public Map<Integer, String> getAllEmpInfo(){
-
         return employeeService.getAllEmployee();
     }
 
