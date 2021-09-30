@@ -16,8 +16,11 @@ import java.util.Map;
 public class EmployeeExceptionHandler {
 
     @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<Error> handleException(EmployeeNotFoundException e) {
-        Error error = new Error(HttpStatus.NOT_FOUND, e.getLocalizedMessage());
-        return new ResponseEntity<>(error, error.getHttpStatus());
+    public ResponseEntity<Map<String, String>> handleException(EmployeeNotFoundException e) {
+        Map<String, String> errorResponse = new HashMap<>();
+
+        errorResponse.put("message", e.getLocalizedMessage());
+        errorResponse.put("status", HttpStatus.BAD_REQUEST.toString());
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 }

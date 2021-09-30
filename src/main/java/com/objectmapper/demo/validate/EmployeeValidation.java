@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmployeeValidation {
 
-    public void validateEmployeeName(EmployeeData employeeData){
+    public EmployeeData validateEmployeeName(EmployeeData employeeData){
 
        if(employeeData.getId()>EmployeeConstant.Constants.LIMIT
                && employeeData.getEmployeeName().length()> EmployeeConstant.Constants.CHARACTERS
@@ -19,7 +19,7 @@ public class EmployeeValidation {
 
        }
 
-
+       return employeeData;
     }
 
 }
